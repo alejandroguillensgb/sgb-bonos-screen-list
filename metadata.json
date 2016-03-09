@@ -1,0 +1,18 @@
+{
+    "name": "sgb-bonos-screen-list",
+    "type": "screen",
+    "params": {
+        "param1": {
+            "name":"title",
+            "type":"string",
+            "description": "", 
+            "title": "Title" 
+        },
+        "param2": {
+            "name":"url",
+            "type": "string",
+            "description": "",
+            "title": "Url"
+        }
+    }
+}
