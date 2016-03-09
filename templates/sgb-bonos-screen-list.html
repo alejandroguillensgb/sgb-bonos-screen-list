@@ -1,0 +1,69 @@
+<ion-view view-title="{{ params.title | translate }}" class="main-background">   
+    <ion-content>
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="update()">
+        </ion-refresher>
+
+        <div class="searchBarView card item-input-inset">
+            <label class="searchField item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input type="search" placeholder="Search" ng-model="searchQuery.value" ng-change="filterItems(searchQuery.value)">
+            </label>
+            <button class="button button-clear " ng-click="cancelSearch()">
+                <i class="icon ion-close-circled searchCancelButton"></i>
+            </button>
+        </div>
+
+        <ion-list>
+            <div class="item" ng-repeat="result in filteredItems">
+                <div class="item-divider">
+                    <div class="row">
+                        <p class="bold white title">{{ result['lightbox_link/_text'] }}</p>
+                    </div>
+                    <div class="row">
+                        <p class="light white subtitle">
+                            {{ result['collarge_value'] }} - {{ result['date_value_1'] }} {{ result['hora_label'] }}
+                        </p>
+                    </div>
+                </div>
+                <div class="item background-opaque">
+                    <div class="row">
+                        <div class="col col-50">
+                            <p class="bold subtitle resalt">Precio</p>
+                        </div>
+                        <div class="col col-50"> 
+                            <p class="bold subtitle resalt">{{ result['col_number_1/_source'] }}%</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-50">
+                            <p class="bold subtitle" ng-class="result['cierre_value'][0]!='-'?'positive':'negative'">
+                                {{ result['cierre_label'] }}:
+                            </p>
+                        </div>
+                        <div class="col col-50">
+                            <p ng-class="result['cierre_value'][0]!='-'?'positive':'negative'">
+                                {{ result['cierre_value'] }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-50">
+                            <p class="bold">YTM</p>
+                        </div>
+                        <div class="col col-50">
+                            <p>{{ result['col_number_2/_source'] }}%</p> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-50">
+                            <p>{{ result['col_value_1'] }}</p> 
+                        </div>
+                        <div class="col col-50">
+                            <p>{{ result['col_value_2'] }}</p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+{
+  "name": "sgb-bonos-screen-list",
+  "version": "1.0.0",
+  "homepage": "https://github.com/SYNERGY-GB/sgb-bonos-screen-list",
+  "authors": [
+    "Megazord <megazord@synergy-gb.com>"
+  ],
+  "main": "dist/sgb-bonos-screen-list.js",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "Propietary",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "megazord-framework": "git@github.com:SYNERGY-GB/megazord-framework.git#1.2"
+  }
+}
